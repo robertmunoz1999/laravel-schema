@@ -1,0 +1,70 @@
+{
+    "get": {
+        "tags": [
+            "Shops"
+        ],
+        "summary": "Sell a product from a shop",
+        "parameters": [
+            {
+                "name": "shop",
+                "in": "path",
+                "required": true,
+                "description": "The id of the shop",
+                "schema": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "product",
+                "in": "path",
+                "required": true,
+                "description": "The id of the product to sell",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "security": [],
+        "responses": {
+            "200": {
+                "description": "Product sold successfully",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "Product sold successfully"
+                                },
+                                "remaining": {
+                                    "type": "integer",
+                                    "example": 9
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Product out of stock or cannot be sold",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "Product is out of stock"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Shop or Product not found."
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+        },
+        "name": {
+            "type": "string",
+        },
+        "quantity": {
+            "type": "integer",
+            "description": "Available quantity of the product",
+            "example": 100
+        },
+    }
+}

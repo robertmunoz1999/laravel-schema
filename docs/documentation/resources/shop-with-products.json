@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+        },
+        "name": {
+            "type": "string",
+        },
+        "products": {
+            "type": "array",
+            "description": "List of products in the shop",
+            "items": {
+                "$ref": "product.json"
+            }
+        }
+    }
+}

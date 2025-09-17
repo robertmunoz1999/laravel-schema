@@ -1,0 +1,89 @@
+{
+    "get": {
+        "tags": [
+            "Shops"
+        ],
+        "summary": "Get shops list",
+        "parameters": [
+            {
+                "name": "raw",
+                "in": "query",
+                "description": "Get info without pagination",
+                "example": "true",
+                "schema": {
+                    "type": "boolean"
+                }
+            }
+        ],
+        "security": [],
+        "responses": {
+            "200": {
+                "description": "Example list",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "../resources/shared/paginated-results.json"
+                                }
+                            ],
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "../resources/shop.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Invalid parameters",
+            },
+        }
+    },
+    "delete": {
+        "tags": [
+            "Shops"
+        ],
+        "summary": "Delete a shop",
+        "parameters": [
+            {
+                "name": "shop",
+                "in": "path",
+                "required": true,
+                "description": "The ID of the shop to delete",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "security": [],
+        "responses": {
+            "200": {
+                "description": "Shop deleted successfully",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "Shop deleted successfully"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Shop not found"
+            },
+            "400": {
+                "description": "Invalid request"
+            }
+        }
+    }
+}

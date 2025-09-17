@@ -1,0 +1,75 @@
+{
+    "get": {
+        "tags": [
+            "Shops"
+        ],
+        "summary": "Get shop detail",
+        "parameters": [
+            {
+                "name": "shop_id",
+                "in": "path",
+                "required": true,
+                "description": "The id of the shop",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "security": [],
+        "responses": {
+            "200": {
+                "description": "Booking detail",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../resources/shop-with-products.json"
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Not found."
+            }
+        }
+    },
+    "delete": {
+        "tags": [
+            "Shops"
+        ],
+        "summary": "Delete a shop",
+        "parameters": [
+            {
+                "name": "shop",
+                "in": "path",
+                "required": true,
+                "description": "The id of the shop to delete",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "security": [],
+        "responses": {
+            "200": {
+                "description": "Shop deleted successfully",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "Shop deleted successfully"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Shop not found"
+            }
+        }
+    }
+}
+

@@ -20,13 +20,19 @@
     ],
     "tags": [
         {
-            "name": "Example"
+            "name": "Shops"
         },
     ],
     "paths": {
-        "/example": {
-            "$ref": "./paths/example.json"
+        "/shops": {
+            "$ref": "./paths/shops.json"
         },
+        "/shops/{shop_id}": {
+            "$ref": "./paths/shops-shop.json"
+        },
+        "/shops/{shop_id}/products/{product_id}/sell": {
+            "$ref": "./paths/shops-shop-products-product.json"
+        }
     },
     "components": {
         "securitySchemes": {

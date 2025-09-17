@@ -7,8 +7,10 @@
         "name": {
             "type": "string",
         },
-        "last_name": {
-            "type": "string",
+        "products_count": {
+            "type": "integer",
+            "description": "Number of products in the shop",
+            "example": 42
         },
     }
 }
