@@ -1,0 +1,45 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "version": "1.0.0",
+        "title": "Example API",
+        "description": "Welcome to the Example API documentation.",
+        "x-logo": {
+            "url": "./logo.png"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://app.production.com/api/",
+            "description": "Production Server"
+        },
+        {
+            "url": "https://app.sandbox.com/api/",
+            "description": "Sandbox Server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Example"
+        },
+    ],
+    "paths": {
+        "/example": {
+            "$ref": "./paths/example.json"
+        },
+    },
+    "components": {
+        "securitySchemes": {
+            "Bearer token Authentication": {
+                "type": "",
+            },
+            "Bearer token on query": {
+                "type": "",
+            },
+            "Permissions": {
+                "type": "http",
+                "scheme": "permissions"
+            }
+        }
+    }
+}

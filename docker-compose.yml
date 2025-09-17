@@ -1,0 +1,49 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: base
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./:/var/www/html
+
+    database_test:
+        image: mysql
+        environment:
+            MYSQL_DATABASE: database_test
+            MYSQL_ROOT_PASSWORD: secret_test
+            TZ: UTC
+        tmpfs:
+            - /var/lib/mysql
+
+    database:
+        image: mysql
+        volumes:
+            - dbdata:/var/lib/mysql:delegated
+        environment:
+            MYSQL_DATABASE: database
+            MYSQL_ROOT_HOST: '%'
+            MYSQL_ROOT_PASSWORD: secret
+            TZ: UTC
+        ports:
+            - "3307:3306"
+        restart: on-failure
+
+    documentation:
+        image: communityfirst/live-server
+        volumes:
+            - ./docs/:/var/www:delegated
+        ports:
+            - "7071:8080"
+
+    redis:
+        image: redis:latest
+        volumes:
+            - dbredis:/data:delegated
+        command: [ "redis-server", "--appendonly", "yes" ]
+volumes:
+    dbdata:
+    dbredis:
+    dbprodaws:

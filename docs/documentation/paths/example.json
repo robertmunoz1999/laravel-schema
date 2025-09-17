@@ -1,0 +1,54 @@
+{
+    "get": {
+        "tags": [
+            "Example"
+        ],
+        "summary": "Get example list",
+        "parameters": [
+            {
+                "name": "raw",
+                "in": "query",
+                "description": "Get info without pagination",
+                "example": "true",
+                "schema": {
+                    "type": "boolean"
+                }
+            }
+        ],
+        "security": [
+            {
+                "Bearer token Authentication": [],
+                "Permissions": [
+                    "api.example.list"
+                ]
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Example list",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "../resources/shared/paginated-results.json"
+                                }
+                            ],
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "../resources/example.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Invalid parameters",
+            },
+        }
+    }
+}

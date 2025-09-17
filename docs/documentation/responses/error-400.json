@@ -1,0 +1,14 @@
+{
+    "description": "Bad request.",
+    "content": {
+        "application/json": {
+            "schema": {
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "type": "object",
+    "properties": {
+        "links": {
+            "type": "object",
+            "properties": {
+                "first": {
+                    "type": "string",
+                    "description": "First page link"
+                },
+                "last": {
+                    "type": "string",
+                    "description": "Last page link"
+                },
+                "prev": {
+                    "type": "string",
+                    "description": "Prev page link"
+                },
+                "next": {
+                    "type": "string",
+                    "description": "Next page link"
+                }
+            }
+        },
+        "meta": {
+            "type": "object",
+            "properties": {
+                "current_page": {
+                    "type": "integer",
+                    "description": "Current page number"
+                },
+                "from": {
+                    "type": "integer",
+                    "description": "From n result"
+                },
+                "to": {
+                    "type": "integer",
+                    "description": "To n result"
+                },
+                "last_page": {
+                    "type": "integer",
+                    "description": "Last page number"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "Original path"
+                },
+                "per_page": {
+                    "type": "integer",
+                    "description": "Number of results per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "Total results"
+                }
+            }
+        }
+    }
+}

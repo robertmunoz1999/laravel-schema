@@ -1,0 +1,17 @@
+{
+  "type": "string",
+  "title": "QuestionType",
+  "enum": [
+    "String",
+    "Text",
+    "Integer",
+    "Double",
+    "Boolean",
+    "Date",
+    "DateAndTime",
+    "Options",
+    "Email",
+    "PhoneNumber",
+    "Check"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+    "description": "Unauthorized.",
+    "content": {
+        "application/json": {
+            "schema": {
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

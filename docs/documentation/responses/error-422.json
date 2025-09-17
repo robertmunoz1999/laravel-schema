@@ -1,0 +1,22 @@
+{
+    "description": "Invalid parameters format",
+    "content": {
+        "application/json": {
+            "schema":
+            {
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "type": "error"
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

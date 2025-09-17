@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "title": "Example",
+  "properties": {
+    "example_id": {
+      "type": "string"
+    },
+    "values": {
+      "type": "array"
+    }
+  }
+}
